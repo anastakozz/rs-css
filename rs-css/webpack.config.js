@@ -26,6 +26,10 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
         exclude: ["/node_modules/"],
