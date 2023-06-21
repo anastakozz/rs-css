@@ -1,8 +1,17 @@
-@import "base/normalize";
+@import 
+    "base/normalize";
 
-@import "components/links.scss";
+@import
+    "themes/theme";
+
+@import 
+    "components/variables",
+    "components/links";
 
 @import 
     "layout/header",
+    "layout/main-wrapper",
+    "layout/left-col",
     "layout/sidebar",
     "layout/footer";
+

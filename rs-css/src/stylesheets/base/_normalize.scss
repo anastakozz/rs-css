@@ -54,6 +54,7 @@ nav,
 section,
 summary {
     display: block;
+    box-sizing: border-box;
 }
 
 // Corrects inline-block display not defined in IE6/7/8/9 & FF3

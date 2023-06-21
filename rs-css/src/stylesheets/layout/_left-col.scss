@@ -1,0 +1,56 @@
+.left-column {
+    width: 70%;
+}
+
+.left-column > * {
+    margin: auto;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.game {
+    width: 90%;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.editor {
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    border: 1px solid black;
+}
+
+.editor > * {
+    width: 50%;
+}
+
+.css-title,
+.html-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.code-space {
+    display: flex;
+}
+
+.line-numbers {
+    width: 15%;
+    height: 300px;
+    background-color: aquamarine;
+}
+
+.html-code-area,
+.css-code-area {
+background-color: aqua;
+height: 300px;
+width: 85%;
+}

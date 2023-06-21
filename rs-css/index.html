@@ -6,19 +6,62 @@
     <title>RSS-css-Diner</title>
   </head>
   <body>
-    <header class="header"></header>
     <main class="main">
-      <section class="order"></section>
-      <section class="game"></section>
-      <section class="editor"></section>
-      <aside class="sidebar"></aside>
+      <div class="left-column">
+        <section class="order">
+          <h2 class="order-title">Select all red triangles</h2>
+          <button class="help-btn">Help</button>
+        </section>
+        <section class="game"></section>
+        <section class="editor">
+          <div class="css-editor">
+            <div class="css-title">
+              <p class="editor-name">CSS Editor</p>
+              <p class="file-name">style.css</p>
+            </div>
+            <div class="code-space">
+              <div class="line-numbers css-lines"></div>
+              <div class="css-code-area"></div>
+            </div>
+          </div>
+          <div class="html-editor">
+            <div class="html-title">
+              <p class="editor-name">HTML Editor</p>
+              <p class="file-name">index.html</p>
+            </div>
+            <div class="code-space">
+              <div class="line-numbers css-lines"></div>
+              <div class="html-code-area"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <aside class="sidebar">
+        <h4 class="sidebar-title">Choose a level</h4>
+        <div class="levels-wrapper">
+          <ol class="levels">
+            <li class="level-li"></li>
+            <li class="level-li"></li>
+            <li class="level-li"></li>
+            <li class="level-li"></li>
+          </ol>
+        </div>
+      </aside>
     </main>
     <footer class="footer">
-      <a href="https://github.com/anastakozz" class="link git-link">anastakozz</a>
-      <a href="https://rs.school/" class="link rss-link">
-        <img src="./src/assets/logo_rs_text.svg" alt="RSS-logo" class="rss-logo" />
-      </a>
-      <span class="year">2023</span>
+      <div class="footer-wrapper">
+        <a href="https://github.com/anastakozz" class="link git-link"
+          >anastakozz</a
+        >
+        <a href="https://rs.school/" class="link rss-link">
+          <img
+            src="./src/assets/logo_rs_text.svg"
+            alt="RSS-logo"
+            class="rss-logo"
+          />
+        </a>
+        <span class="year">2023</span>
+      </div>
     </footer>
   </body>
 </html>
