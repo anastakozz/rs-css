@@ -9,26 +9,16 @@
     <main class="main">
       <div class="left-column">
         <section class="order">
-          <h2 class="order-title">Select all blue triangles:</h2>
+          <h2 class="order-title">Select all triangles:</h2>
           <!-- <button class="help-btn">Help</button> -->
         </section>
         <section class="game">
-          <div class="shape-wrapper">
-            <object
-              data="./assets/SVG/circle.svg"
-              type="image/svg+xml"
-              class="circle-img shape"
-            ></object>
-            <object
-              data="./assets/SVG/triangle.svg"
-              type="image/svg+xml"
-              class="triangle-img shape"
-            ></object>
-            <object
-              data="./assets/SVG/square.svg"
-              type="image/svg+xml"
-              class="square-img shape"
-            ></object>
+          <div class="wall">
+            <circle class="shape"></circle>
+            <triangle class="shape"> </triangle>
+            <square class="shape">
+              <triangle class="shape-small glowing"> </triangle>
+            </square>
           </div>
         </section>
         <section class="editor">
@@ -40,7 +30,7 @@
             <div class="code-space">
               <div class="line-numbers css-lines"></div>
               <div class="css-code-area">
-                <input type="text" class="code-input">
+                <input type="text" class="code-input" />
               </div>
             </div>
           </div>

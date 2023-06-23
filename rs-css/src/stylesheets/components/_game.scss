@@ -1,4 +1,4 @@
-.shape-wrapper {
+.wall {
     min-width: 40% ;
     display: flex;
     justify-content: space-between;
@@ -8,4 +8,39 @@
 .shape {
     width: 120px;
     height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.shape-small {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+circle {
+    background-image: url(../../assets/SVG/circle.svg);
+}
+
+triangle {
+    background-image: url(../../assets/SVG/triangle.svg);
+}
+
+square {
+    background-image: url(../../assets/SVG/square.svg);
+}
+@keyframes glow { 
+    70% {
+      opacity: 0.5;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+.glowing {
+    animation: glow 1.2s infinite;
+}
+
