@@ -1,4 +1,10 @@
 .link {
+    cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: white;
+    transition: all 0.3s;
+}
+
+.link:hover {
+    color: $additional_color;
 }

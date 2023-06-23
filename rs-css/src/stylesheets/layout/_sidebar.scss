@@ -1,8 +1,26 @@
 .sidebar {
-    padding: $padding;
+    padding: 65px 15px 25px 20px;
     position: fixed;
     right: 0;
-    width: 30%;
+    width: 20%;
     height: 100vh;
     background-color: $sidebar_backg;
+}
+
+.level {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+.checkmark {
+    background-image: url(../../assets/SVG/unchecked.svg);
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 35px;
+}
+.checked {
+    background-image: url(../../assets/SVG/checked.svg);
 }

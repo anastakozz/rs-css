@@ -1,17 +1,24 @@
 @import 
+    "abstracts/variables",
+    "abstracts/mixins";
+
+@import 
     "base/normalize";
 
 @import
     "themes/theme";
 
-@import 
-    "components/variables",
-    "components/links";
+@import
+    "components/links",
+    "components/texts",
+    "components/game";
+
 
 @import 
     "layout/header",
-    "layout/main-wrapper",
+    "layout/body",
     "layout/left-col",
     "layout/sidebar",
     "layout/footer";
+
 

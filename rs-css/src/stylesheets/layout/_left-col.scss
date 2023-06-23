@@ -1,5 +1,5 @@
 .left-column {
-    width: 70%;
+    width: 80%;
 }
 
 .left-column > * {
@@ -11,21 +11,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 20px;
+    padding: 40px 20px 20px 20px;
 }
 
 .game {
-    width: 90%;
+    max-width: 90%;
     height: 200px;
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .editor {
     margin-top: 20px;
     width: 90%;
     display: flex;
-    border: 1px solid black;
+    justify-content: space-between;
+
+    .css-editor,
+    .html-editor {
+        width: 48%;
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.4);
+    }
 }
+
+
 
 .editor > * {
     width: 50%;
@@ -35,7 +45,9 @@
 .html-title {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0 10px;
+    font-size: smaller;
+    background-color: $title_area;
 }
 
 .code-space {
@@ -45,12 +57,24 @@
 .line-numbers {
     width: 15%;
     height: 300px;
-    background-color: aquamarine;
+    background-color: $line-num_area;
 }
 
 .html-code-area,
 .css-code-area {
-background-color: aqua;
-height: 300px;
-width: 85%;
+    box-sizing: border-box;
+    background-color: $code-area_field;
+    height: 300px;
+    width: 85%;
+    padding: 10px 10px;
+}
+
+.code-input {
+    border: none;
+    width: 100%;
+    background: none;
+
+    &:focus {
+        outline: none;
+    }
 }

@@ -1,0 +1,16 @@
+@mixin font-face {
+  @font-face {
+    font-family: 'Comfortaa', cursive;
+    src: url('../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  }
+
+  @font-face {
+    font-family: 'Comfortaa', cursive;
+    src: url('../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+  }

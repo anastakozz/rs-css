@@ -9,10 +9,28 @@
     <main class="main">
       <div class="left-column">
         <section class="order">
-          <h2 class="order-title">Select all red triangles</h2>
-          <button class="help-btn">Help</button>
+          <h2 class="order-title">Select all blue triangles:</h2>
+          <!-- <button class="help-btn">Help</button> -->
         </section>
-        <section class="game"></section>
+        <section class="game">
+          <div class="shape-wrapper">
+            <object
+              data="./assets/SVG/circle.svg"
+              type="image/svg+xml"
+              class="circle-img shape"
+            ></object>
+            <object
+              data="./assets/SVG/triangle.svg"
+              type="image/svg+xml"
+              class="triangle-img shape"
+            ></object>
+            <object
+              data="./assets/SVG/square.svg"
+              type="image/svg+xml"
+              class="square-img shape"
+            ></object>
+          </div>
+        </section>
         <section class="editor">
           <div class="css-editor">
             <div class="css-title">
@@ -21,7 +39,9 @@
             </div>
             <div class="code-space">
               <div class="line-numbers css-lines"></div>
-              <div class="css-code-area"></div>
+              <div class="css-code-area">
+                <input type="text" class="code-input">
+              </div>
             </div>
           </div>
           <div class="html-editor">
@@ -37,22 +57,29 @@
         </section>
       </div>
       <aside class="sidebar">
-        <h4 class="sidebar-title">Choose a level</h4>
+        <h4 class="sidebar-title">Choose a level:</h4>
         <div class="levels-wrapper">
-          <ol class="levels">
-            <li class="level-li"></li>
-            <li class="level-li"></li>
-            <li class="level-li"></li>
-            <li class="level-li"></li>
-          </ol>
+          <div class="level link">
+            <span class="checkmark checked"></span>
+            <span class="level-number">1</span>
+          </div>
+          <div class="level link">
+            <span class="checkmark checked"></span>
+            <span class="level-number">2</span>
+          </div>
+          <div class="level link">
+            <span class="checkmark"></span>
+            <span class="level-number">3</span>
+          </div>
+          <div class="level link">
+            <span class="checkmark"></span>
+            <span class="level-number">4</span>
+          </div>
         </div>
       </aside>
     </main>
     <footer class="footer">
       <div class="footer-wrapper">
-        <a href="https://github.com/anastakozz" class="link git-link"
-          >anastakozz</a
-        >
         <a href="https://rs.school/" class="link rss-link">
           <img
             src="./src/assets/logo_rs_text.svg"
@@ -60,7 +87,12 @@
             class="rss-logo"
           />
         </a>
-        <span class="year">2023</span>
+        <div class="git-div">
+          <span class="year">2023</span>
+          <a href="https://github.com/anastakozz" class="link git-link"
+            >anastakozz</a
+          >
+        </div>
       </div>
     </footer>
   </body>

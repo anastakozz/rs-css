@@ -1,22 +1,25 @@
 .footer {
+    margin: 30px 0 5px 0;
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: $footer_backg;
+    // background-color: $footer_backg;
 }
 
 .footer-wrapper {
-    padding: $padding;
+    margin: auto;
+    box-sizing: border-box;
+    width: 90%;
     height: 40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .rss-logo {
-    width: 50px;
-    position: fixed;
-    left: 50%;
-    margin-left: -25px;
-    margin-top: -12px;
+    width: 70px;
+    // position: fixed;
+    // left: 50%;
+    // margin-left: -25px;
+    // margin-top: -12px;
 }

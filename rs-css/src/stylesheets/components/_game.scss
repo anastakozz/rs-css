@@ -1,0 +1,11 @@
+.shape-wrapper {
+    min-width: 40% ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shape {
+    width: 120px;
+    height: 120px;
+}

@@ -39,8 +39,20 @@ const config = {
         use: [stylesHandler, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(eot|svg|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
+      },
+      {
+        test: /\.(?:|ttf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: `/assets/fonts/[name].[ext]`,
+              publicPath: "../",
+            }
+          }
+        ]
       },
     ],
   },
