@@ -4,7 +4,7 @@ export const levelsArr: LevelI[] = [
     {
         selectorName: 'select by tag',
         levelNumber: 1,
-        order: 'select a square',
+        order: 'Select a square:',
         selector: 'tag',
         syntax: 'A',
         help: 'TODO',
@@ -17,7 +17,7 @@ export const levelsArr: LevelI[] = [
     {
         selectorName: 'select by class',
         levelNumber: 2,
-        order: 'select orange triangle',
+        order: 'Select orange triangle:',
         selector: 'class',
         syntax: '.',
         help: 'TODO',

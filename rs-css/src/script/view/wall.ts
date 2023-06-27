@@ -3,14 +3,16 @@ import { markupI } from '../utils/types';
 import { ElementsGenerator, isHtmlElement } from '../utils/utils';
 
 export default class WallView {
-    fragment: DocumentFragment
+    fragment: DocumentFragment;
+    level: number
 
     constructor(level: number){
+        this.level = level;
         this.fragment = document.createDocumentFragment();
-        this.createView(level);
+        this.createWallView(level);
     }
 
-    createView(level: number):void {
+    createWallView(level: number):void {
         const params = levelsArr[level].svgMarkup;
 
         const generateMarkup = (params: markupI[], parent: DocumentFragment | HTMLElement):void => {
@@ -33,6 +35,24 @@ export default class WallView {
     getDocumentFragment():DocumentFragment {
         return this.fragment;
     }
+
+    appendWallView():void {
+        const wall = document.querySelector('.wall');
+        const title = document.querySelector('.order-title');
+        if (isHtmlElement(wall)) {
+            wall.append(this.fragment);
+        }
+        console.log(title)
+
+        // 
+
+        if(isHtmlElement(title)) {
+            console.log('hi')
+            title.textContent = levelsArr[this.level].order;
+        }
+    }
+
+
 
 
 
