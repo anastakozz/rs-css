@@ -3,24 +3,31 @@ import { markupI } from '../utils/types';
 import { ElementsGenerator, isHtmlElement } from '../utils/utils';
 
 export default class WallView {
+
     fragment: DocumentFragment;
-    level: number
+    level: number;
+    wall: HTMLElement | null;
+    title: HTMLElement | null;
 
     constructor(level: number){
         this.level = level;
         this.fragment = document.createDocumentFragment();
         this.createWallView(level);
+        this.wall = document.querySelector('.wall');
+        this.title = document.querySelector('.order-title');
     }
 
-    createWallView(level: number):void {
+    private createWallView(level: number):void {
         const params = levelsArr[level - 1].svgMarkup;
 
         const generateMarkup = (params: markupI[], parent: DocumentFragment | HTMLElement):void => {
             params.forEach((param) => {
                 const elem = new ElementsGenerator(param).getElement();
+
                 if (isHtmlElement(elem)){
                     parent.append(elem);
                 }
+
                 if (param.children){
                     generateMarkup(param.children, elem)
                 }
@@ -32,24 +39,17 @@ export default class WallView {
         }
     }
 
-    getDocumentFragment():DocumentFragment {
-        return this.fragment;
-    }
 
-    appendWallView():void {
-        const wall = document.querySelector('.wall');
-        const title = document.querySelector('.order-title');
-        if (isHtmlElement(wall)) {
-            wall.append(this.fragment);
+    public updateWallView():void {
+        if (isHtmlElement(this.wall)) {
+            this.wall.replaceChildren(this.fragment);
         }
-        console.log(title)
 
-        // 
-
-        if(isHtmlElement(title)) {
-            title.textContent = levelsArr[this.level - 1].order;
+        if(isHtmlElement(this.title)) {
+            this.title.textContent = levelsArr[this.level - 1].order;
         }
     }
+
 
 
 

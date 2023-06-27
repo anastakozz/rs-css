@@ -5,10 +5,9 @@ export default class App {
 
     createView(): void {
         const levels = new LevelsView();
-        const wall  = new WallView(levels.getActiveLevel());
-        wall.appendWallView();
-        
-        // const HtmlArea = new HtmlView();
 
+        const wall  = new WallView(levels.getActiveLevel());
+        wall.updateWallView();
     }
+
 }

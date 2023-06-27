@@ -1,5 +1,6 @@
 import { levelsArr } from "../levels/levels";
 import { ElementsGenerator, isHtmlElement } from "../utils/utils";
+import WallView from "./wallView";
 
 export default class LevelsView {
     level: number
@@ -11,11 +12,11 @@ export default class LevelsView {
         this.createLevelsView();
     }
 
-    getActiveLevel () {
+    public getActiveLevel (): number {
         return this.level;
     }
 
-    createLevelsView () {
+    private createLevelsView (): void {
         const wrapper = document.querySelector('.levels-wrapper');
         if (isHtmlElement(wrapper)){
                 for (let i = 1; i <= this.levelsTotal; i++){
@@ -25,17 +26,19 @@ export default class LevelsView {
                     const levelNumber = new ElementsGenerator({tag: 'span', class: ['level-number']}).getElement();
                     levelNumber.textContent = `${i}`;
                     levelBlock.append(levelNumber);
+                    levelBlock.addEventListener('click', this.switchLevel);
                 }
         }
-
-
     }
 
-//     <div class="level link">
-//     <span class="checkmark checked"></span>
-//     <span class="level-number">1</span>
-//   </div>
-
-
+    private switchLevel(event: Event): void {
+        const target = event.currentTarget as HTMLElement;
+        const newLevel: string | null = target.children[1].textContent;
+        if (newLevel){
+            this.level = +newLevel;
+            const wall  = new WallView(this.level);
+            wall.updateWallView();
+        }
+    }
 
 }
