@@ -6,7 +6,9 @@
     align-items: center;
 }
 
-.shape {
+circle,
+triangle,
+square {
     width: 120px;
     height: 120px;
     display: flex;
@@ -14,11 +16,17 @@
     align-items: center;
 }
 
-.shape-small {
-    display: block;
+.small {
     width: 30px;
     height: 30px;
 }
+
+.medium {
+    width: 60px;
+    height: 60px;
+}
+
+
 
 circle {
     background-image: url(../../assets/SVG/circle.svg);
@@ -26,10 +34,15 @@ circle {
 
 triangle {
     background-image: url(../../assets/SVG/triangle.svg);
-    .orange {
-        background-image: url(../../assets/SVG/triangle_orange.svg);
-    }
+    // &.orange {
+    //     background-image: url(../../assets/SVG/triangle_orange.svg);
+    // }
 }
+
+.orange {
+    background-image: url(../../assets/SVG/triangle_orange.svg);
+}
+
 
 square {
     background-image: url(../../assets/SVG/square.svg);
