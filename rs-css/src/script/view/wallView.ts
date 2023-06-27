@@ -13,7 +13,7 @@ export default class WallView {
     }
 
     createWallView(level: number):void {
-        const params = levelsArr[level].svgMarkup;
+        const params = levelsArr[level - 1].svgMarkup;
 
         const generateMarkup = (params: markupI[], parent: DocumentFragment | HTMLElement):void => {
             params.forEach((param) => {
@@ -47,8 +47,7 @@ export default class WallView {
         // 
 
         if(isHtmlElement(title)) {
-            console.log('hi')
-            title.textContent = levelsArr[this.level].order;
+            title.textContent = levelsArr[this.level - 1].order;
         }
     }
 

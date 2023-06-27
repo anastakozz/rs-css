@@ -1,11 +1,13 @@
-import WallView from '../view/wall';
+import WallView from '../view/wallView';
+import LevelsView from '../view/levelsView';
 
 export default class App {
 
     createView(): void {
-        const wall  = new WallView(1);
+        const levels = new LevelsView();
+        const wall  = new WallView(levels.getActiveLevel());
         wall.appendWallView();
-        // const levels = new levelsView();
+        
         // const HtmlArea = new HtmlView();
 
     }
