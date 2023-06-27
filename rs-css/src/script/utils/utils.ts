@@ -11,7 +11,9 @@ export class ElementsGenerator {
 
     createElement(params: markupI):HTMLElement {
         const elem: HTMLElement = document.createElement(params.tag);
-        if (params.class) {elem.classList.add(params.class)}
+        if (params.class) {
+            params.class.forEach((item) => elem.classList.add(item))
+            }
         return elem;
     }
 

@@ -11,7 +11,7 @@ export const levelsArr: LevelI[] = [
         svgMarkup: [
             {tag: 'circle'},
             {tag: 'triangle'},
-            {tag: 'square', class: 'glowing'},
+            {tag: 'square', class: ['glowing']},
         ],
     },
     {
@@ -23,7 +23,7 @@ export const levelsArr: LevelI[] = [
         help: 'TODO',
         svgMarkup: [
             {tag: 'triangle'},
-            {tag: 'square', children: [{tag: 'triangle', class: 'orange, glowing'}]},
+            {tag: 'square', children: [{tag: 'triangle', class: ['medium','orange', 'glowing']}]},
             {tag: 'circle'}],
     },
 
