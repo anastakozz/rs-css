@@ -14,6 +14,7 @@ square {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
 }
 
 .small {
@@ -47,6 +48,11 @@ triangle {
 square {
     background-image: url(../../assets/SVG/square.svg);
 }
+
+#romb {
+    transform: rotate(45deg);
+}
+
 @keyframes glow { 
     70% {
       opacity: 0.5;
