@@ -39,7 +39,6 @@ export default class WallView {
         }
     }
 
-
     public updateWallView():void {
         if (isHtmlElement(this.wall)) {
             this.wall.replaceChildren(this.fragment);
@@ -48,11 +47,7 @@ export default class WallView {
         if(isHtmlElement(this.title)) {
             this.title.textContent = levelsArr[this.level - 1].order;
         }
+
     }
-
-
-
-
-
 
 }

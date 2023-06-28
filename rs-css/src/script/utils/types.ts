@@ -6,6 +6,7 @@ export interface LevelI {
   syntax: string;
   help?: string;
   svgMarkup?: markupI[];
+  htmlMarkup?: string[];
 }
 
 export interface markupI {
