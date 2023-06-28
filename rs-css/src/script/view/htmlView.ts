@@ -1,6 +1,9 @@
 import { levelsArr } from "../levels/levels";
 import { ElementsGenerator } from "../utils/utils";
 import { escapeHtml } from "../utils/utils";
+import hljs from 'highlight.js/lib/core';
+// import html from 'highlight.js/lib/languages/xml';
+// hljs.registerLanguage('xml', html );
 
 export default class HtmlView {
 
@@ -18,11 +21,8 @@ export default class HtmlView {
     private appendCodeElement(str: string): void {
         const codeElement = new ElementsGenerator({tag: 'code', class: ['language-html']}).getElement();
         codeElement.textContent = str;
+        hljs.highlightElement(codeElement);
         this.fragment.append(codeElement);
-        // if(isHtmlElement(this.fragment)){
-        //     console.log('hi')
-        //     this.fragment.append(codeElement);
-        // }
     }
 
     private createHtmlView(level: number): void {

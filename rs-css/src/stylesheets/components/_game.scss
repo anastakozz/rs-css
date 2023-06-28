@@ -54,8 +54,8 @@ square {
 }
 
 @keyframes glow { 
-    70% {
-      opacity: 0.5;
+    40% {
+      opacity: 0.3;
     }
   
     100% {
@@ -64,6 +64,6 @@ square {
   }
 
 .glowing {
-    animation: glow 1.2s infinite;
+    animation: glow 1s infinite;
 }
 
