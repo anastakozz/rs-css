@@ -14,6 +14,9 @@ export class ElementsGenerator {
         if (params.class) {
             params.class.forEach((item) => elem.classList.add(item))
             }
+        if (params.id) {
+            elem.id = params.id;
+        }
         return elem;
     }
 
