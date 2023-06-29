@@ -2,6 +2,7 @@ import { levelsArr } from "../levels/levels";
 import { ElementsGenerator, isHtmlElement } from "../utils/utils";
 import HtmlView from "./htmlView";
 import WallView from "./wallView";
+import { setStorage } from "../utils/utils";
 
 export default class LevelsView {
     level: number;
@@ -54,6 +55,7 @@ export default class LevelsView {
             wall.updateWallView();
             const html = new HtmlView(this.level);
             html.updateHtmlView();
+            setStorage(this.level);
         }
     }
 

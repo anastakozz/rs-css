@@ -24,3 +24,15 @@ export class ElementsGenerator {
         return this.element;
     }
 }
+
+export function getStoredLevel(): number {
+    const check = localStorage.getItem('activeLayer');
+    if(check){
+        return +check;
+    }
+    return 1;
+}
+
+export function setStorage(level: number): void {
+    localStorage.setItem('activeLayer', `${level}`);
+}
