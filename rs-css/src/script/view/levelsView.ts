@@ -33,10 +33,12 @@ export default class LevelsView {
                 }
         }
     }
-
-    private styleActiveLevel(): void {
+    private deselectLevel(): void {
         const previousLevel = document.querySelector('.active-level');
         previousLevel?.classList.remove('active-level');
+    }
+
+    private styleActiveLevel(): void {
         const block = this.wrapper?.children[this.level - 1];
         block?.classList.add('active-level');
     }
@@ -46,6 +48,7 @@ export default class LevelsView {
         const newLevel: string | null = target.children[1].textContent;
         if (newLevel){
             this.level = +newLevel;
+            this.deselectLevel();
             this.styleActiveLevel();
             const wall  = new WallView(this.level);
             wall.updateWallView();
