@@ -53,7 +53,7 @@ export const levelsArr: LevelI[] = [
             '<square></square>',
             '<triangle></triangle>',
             '<circle>',
-            '  <square id = romb ></square>',
+            '  <square id = romb></square>',
             '</circle>'
         ]
     },
@@ -68,6 +68,11 @@ export const levelsArr: LevelI[] = [
             {tag: 'square', class: ['glowing']},
             {tag: 'triangle', class: ['glowing']},
             {tag: 'circle', class: ['glowing']}],
+        htmlMarkup: [
+            '<square></square>',
+            '<triangle></triangle>',
+            '<circle></circle>'
+        ]
     },
     {
         selectorName: 'select direct child',
@@ -80,6 +85,15 @@ export const levelsArr: LevelI[] = [
             {tag: 'square', children: [{tag: 'triangle', class: ['medium']}]},
             {tag: 'triangle'},
             {tag: 'circle', children: [{tag: 'triangle', class: ['medium', 'glowing']}]},
+        ],
+        htmlMarkup: [
+            '<square>',
+            '  <triangle class="medium"></triangle>',
+            '</square>',
+            '<triangle></triangle>',
+            '<circle>',
+            '  <triangle class="medium"></triangle>',
+            '</circle>'
         ]
     },
     {
@@ -93,13 +107,18 @@ export const levelsArr: LevelI[] = [
             {tag: 'square'},
             {tag: 'triangle', class: ['glowing']},
             {tag: 'circle', class: ['glowing']}],
+        htmlMarkup: [
+            '<square></square>',
+            '<triangle></triangle>',
+            '<circle></circle>'
+        ]
     },
     {
         selectorName: 'select first follower',
         levelNumber: 7,
         order: 'Select circle after triangle',
         selector: '+',
-        syntax: 'A +B',
+        syntax: 'A + B',
         help: 'TODO',
         svgMarkup: [
             {tag: 'triangle'},
@@ -108,6 +127,14 @@ export const levelsArr: LevelI[] = [
             {tag: 'circle', class: ['medium']},
             {tag: 'triangle'},
             {tag: 'circle', class: ['glowing']},
+        ],
+        htmlMarkup: [
+            '<triangle></triangle>',
+            '<circle class="medium"></circle>',
+            '<square></square>',
+            '<circle class="medium"></circle>',
+            '<triangle></triangle>',
+            '<circle></circle>',
         ]
     },
     {
@@ -124,6 +151,60 @@ export const levelsArr: LevelI[] = [
             {tag: 'square'},
             {tag: 'circle', class: ['medium']},
             {tag: 'triangle'},
+        ],
+        htmlMarkup: [
+            '<triangle></triangle>',
+            '<circle class="medium"></circle>',
+            '<circle></circle>',
+            '<square></square>',
+            '<circle class="medium"></circle>',
+            '<triangle></triangle>',
+        ]
+    },
+    {
+        selectorName: 'empty slector',
+        levelNumber: 9,
+        order: 'Select all empty circles:',
+        selector: ':empty',
+        syntax: 'div:empty',
+        help: 'TODO',
+        svgMarkup: [
+            {tag: 'circle', class: ['glowing']},
+            {tag: 'circle', children: [{tag: 'triangle', class: ['medium']}]},
+            {tag: 'circle', class: ['glowing']},
+        ],
+        htmlMarkup: [
+            '<circle></circle>',
+            '<circle>',
+            '  <triangle></triangle>',
+            '</circle>',
+            '<circle></circle>',
+        ]
+    },
+    {
+        selectorName: 'universal slector',
+        levelNumber: 10,
+        order: 'Select all inside the circles:',
+        selector: '*',
+        syntax: 'A *',
+        help: 'TODO',
+        svgMarkup: [
+            {tag: 'circle', children: [{tag: 'square', class: ['medium', 'glowing']}]},
+            {tag: 'circle', children: [{tag: 'triangle', class: ['medium', 'glowing']}]},
+            {tag: 'circle', children: [{tag: 'square', class: ['medium', 'glowing'], children: [{tag: 'triangle', class: ['small', 'glowing']}]}]},
+        ],
+        htmlMarkup: [
+            '<circle>',
+            '  <square></square>',
+            '</circle>',
+            '<circle>',
+            '  <triangle></triangle>',
+            '</circle>',
+            '<circle>',
+            '  <square>',
+            '    <triangle></triangle>',
+            '  </square>',
+            '</circle>',
         ]
     },
 ]
