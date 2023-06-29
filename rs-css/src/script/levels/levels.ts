@@ -33,7 +33,7 @@ export const levelsArr: LevelI[] = [
         htmlMarkup: [
             '<triangle></triangle>',
             '<square>',
-            '<triangle class="orange"></triangle>',
+            '  <triangle class="orange"></triangle>',
             '</square>',
             '<circle></circle>',
             ]
@@ -49,6 +49,13 @@ export const levelsArr: LevelI[] = [
             {tag: 'square'},
             {tag: 'triangle'},
             {tag: 'circle', children: [{tag: 'square', class:['medium', 'glowing'], id: 'romb' }]}],
+        htmlMarkup: [
+            '<square></square>',
+            '<triangle></triangle>',
+            '<circle>',
+            '  <square id = romb ></square>',
+            '</circle>'
+        ]
     },
     {
         selectorName: 'select all',

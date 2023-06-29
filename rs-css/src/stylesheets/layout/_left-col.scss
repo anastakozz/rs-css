@@ -66,7 +66,10 @@
     background-color: $code-area_field;
     height: 350px;
     width: 90%;
-    // padding: 10px 10px;
+}
+
+.html-code-area {
+    background-color: $html-area_field;
 }
 
 pre{
@@ -78,6 +81,12 @@ pre{
 .hljs {
     padding: 0;
     background: none;
+}
+
+pre code.hljs {
+    padding: 0 !important;
+    background: none !important;
+
 }
 
 .code-input {

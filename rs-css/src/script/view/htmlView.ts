@@ -1,9 +1,8 @@
 import { levelsArr } from "../levels/levels";
 import { ElementsGenerator } from "../utils/utils";
-import { escapeHtml } from "../utils/utils";
-import hljs from 'highlight.js/lib/core';
-// import html from 'highlight.js/lib/languages/xml';
-// hljs.registerLanguage('xml', html );
+const hljs = require('highlight.js/lib/core');
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+
 
 export default class HtmlView {
 
@@ -30,7 +29,7 @@ export default class HtmlView {
 
         if(params) {
             params.forEach((param) => {
-                this.appendCodeElement(escapeHtml(param));
+                this.appendCodeElement(param);
             })
         }
     }
