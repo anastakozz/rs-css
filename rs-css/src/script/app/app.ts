@@ -5,7 +5,7 @@ import HtmlView from '../view/htmlView';
 export default class App {
 
     createView(): void {
-        const levels = new LevelsView();
+        const levels = new LevelsView(2);
 
         const wall  = new WallView(levels.getActiveLevel());
         wall.updateWallView();

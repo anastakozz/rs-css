@@ -4,13 +4,16 @@ import HtmlView from "./htmlView";
 import WallView from "./wallView";
 
 export default class LevelsView {
-    level: number
-    levelsTotal: number
+    level: number;
+    levelsTotal: number;
+    wrapper: HTMLElement | null;
 
-    constructor () {
-        this.level = 1;
+    constructor (level:number) {
+        this.wrapper = document.querySelector('.levels-wrapper');
+        this.level = level;
         this.levelsTotal = levelsArr.length;
         this.createLevelsView();
+        this.styleActiveLevel();
     }
 
     public getActiveLevel (): number {
@@ -18,18 +21,24 @@ export default class LevelsView {
     }
 
     private createLevelsView (): void {
-        const wrapper = document.querySelector('.levels-wrapper');
-        if (isHtmlElement(wrapper)){
+        if (isHtmlElement(this.wrapper)){
                 for (let i = 1; i <= this.levelsTotal; i++){
                     const levelBlock = new ElementsGenerator({tag: 'div', class: ['level', 'link']}).getElement();
-                    wrapper.append(levelBlock);
+                    this.wrapper.append(levelBlock);
                     levelBlock.append(new ElementsGenerator({tag: 'span', class: ['checkmark']}).getElement());
                     const levelNumber = new ElementsGenerator({tag: 'span', class: ['level-number']}).getElement();
                     levelNumber.textContent = `${i}`;
                     levelBlock.append(levelNumber);
-                    levelBlock.addEventListener('click', this.switchLevel);
+                    levelBlock.addEventListener('click', this.switchLevel.bind(this));
                 }
         }
+    }
+
+    private styleActiveLevel(): void {
+        const previousLevel = document.querySelector('.active-level');
+        previousLevel?.classList.remove('active-level');
+        const block = this.wrapper?.children[this.level - 1];
+        block?.classList.add('active-level');
     }
 
     private switchLevel(event: Event): void {
@@ -37,6 +46,7 @@ export default class LevelsView {
         const newLevel: string | null = target.children[1].textContent;
         if (newLevel){
             this.level = +newLevel;
+            this.styleActiveLevel();
             const wall  = new WallView(this.level);
             wall.updateWallView();
             const html = new HtmlView(this.level);

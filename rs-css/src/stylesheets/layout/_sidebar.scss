@@ -21,6 +21,13 @@
     width: 40px;
     height: 35px;
 }
-.checked {
-    background-image: url(../../assets/SVG/checked.svg);
+
+.active-level {
+    color: $additional_color;
+    & > .checkmark {
+        background-image: url(../../assets/SVG/checked.svg)
+    }
 }
+// .checked {
+//     background-image: url(../../assets/SVG/checked.svg);
+// }
