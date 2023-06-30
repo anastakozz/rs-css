@@ -33,3 +33,7 @@ export function getStoredLevel(): number {
 export function setStorage(level: number): void {
     localStorage.setItem('activeLayer', `${level}`);
 }
+
+export function clearStorage(): void {
+    localStorage.clear();
+}

@@ -2,7 +2,7 @@ import { levelsArr } from "../levels/levels";
 import { ElementsGenerator, isHtmlElement } from "../utils/utils";
 import HtmlView from "./htmlView";
 import WallView from "./wallView";
-import { setStorage } from "../utils/utils";
+import { setStorage, clearStorage } from "../utils/utils";
 
 export default class LevelsView {
     level: number;
@@ -13,6 +13,7 @@ export default class LevelsView {
         this.wrapper = document.querySelector('.levels-wrapper');
         this.level = level;
         this.levelsTotal = levelsArr.length;
+        this.createClearButton();
     }
 
     public createLevelsView (): void {
@@ -30,6 +31,15 @@ export default class LevelsView {
         this.styleActiveLevel();
         this.updateHtmlWallView(this.level);
     }
+
+    private createClearButton() {
+        const progressButton = new ElementsGenerator({tag: 'button', class: ['button', 'hist-btn']}).getElement();
+        progressButton.textContent = 'clear'
+        this.wrapper?.after(progressButton);
+        progressButton.addEventListener('click', this.clearProgress.bind(this));
+    }
+
+
     private deselectLevel(): void {
         const previousLevel = document.querySelector('.active-level');
         previousLevel?.classList.remove('active-level');
@@ -57,6 +67,13 @@ export default class LevelsView {
             wall.updateWallView();
             const html = new HtmlView(level);
             html.updateHtmlView();
+    }
+
+    private clearProgress(): void {
+        clearStorage();
+        this.wrapper?.replaceChildren('');
+        this.level = 1;
+        this.createLevelsView();
     }
 
 }
