@@ -13,15 +13,9 @@ export default class LevelsView {
         this.wrapper = document.querySelector('.levels-wrapper');
         this.level = level;
         this.levelsTotal = levelsArr.length;
-        this.createLevelsView();
-        this.styleActiveLevel();
     }
 
-    public getActiveLevel (): number {
-        return this.level;
-    }
-
-    private createLevelsView (): void {
+    public createLevelsView (): void {
         if (isHtmlElement(this.wrapper)){
                 for (let i = 1; i <= this.levelsTotal; i++){
                     const levelBlock = new ElementsGenerator({tag: 'div', class: ['level', 'link']}).getElement();
@@ -33,6 +27,8 @@ export default class LevelsView {
                     levelBlock.addEventListener('click', this.switchLevel.bind(this));
                 }
         }
+        this.styleActiveLevel();
+        this.updateHtmlWallView(this.level);
     }
     private deselectLevel(): void {
         const previousLevel = document.querySelector('.active-level');
@@ -51,12 +47,16 @@ export default class LevelsView {
             this.level = +newLevel;
             this.deselectLevel();
             this.styleActiveLevel();
-            const wall  = new WallView(this.level);
-            wall.updateWallView();
-            const html = new HtmlView(this.level);
-            html.updateHtmlView();
+            this.updateHtmlWallView(this.level)
             setStorage(this.level);
         }
+    }
+
+    private updateHtmlWallView(level: number): void {
+        const wall  = new WallView(level);
+            wall.updateWallView();
+            const html = new HtmlView(level);
+            html.updateHtmlView();
     }
 
 }
