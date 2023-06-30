@@ -1,0 +1,11 @@
+.button {
+    background-color: $line-num_area;
+    color: $main_color;
+    display: block;
+    margin-top: 15px;
+    border-color: $additional_color;
+
+    &:hover {
+        background-color:  $additional_color;
+    }
+}
