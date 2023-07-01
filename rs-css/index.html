@@ -13,8 +13,7 @@
           <!-- <button class="help-btn">Help</button> -->
         </section>
         <section class="game">
-          <div class="wall">
-          </div>
+          <div class="wall"></div>
         </section>
         <section class="editor">
           <div class="css-editor">
@@ -27,8 +26,14 @@
                 1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />
               </div>
               <div class="css-code-area">
-                <input type="text" class="code-input" />
-                <p class="code-text">Styles would go here</p>
+                <div class="input-block">
+                  <input type="text" class="code-input" />
+                  <button class="button enter-btn">Enter</button>
+                </div>
+                <p class="code-text">
+                  {<br />
+                  /* Styles would go here */<br />}
+                </p>
               </div>
             </div>
           </div>
@@ -42,9 +47,7 @@
                 1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />
               </div>
               <div class="html-code-area">
-                <pre class="html-pre">
-                  <!-- <code class="language-html">&lt;circle&gt;&lt;/circle&gt;</code> -->
-                </pre>
+                <pre class="html-pre"></pre>
               </div>
             </div>
           </div>
@@ -52,8 +55,7 @@
       </div>
       <aside class="sidebar">
         <h4 class="sidebar-title">Choose a level:</h4>
-        <div class="levels-wrapper">
-        </div>
+        <div class="levels-wrapper"></div>
       </aside>
     </main>
     <footer class="footer">

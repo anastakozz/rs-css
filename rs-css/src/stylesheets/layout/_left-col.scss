@@ -89,10 +89,16 @@ pre code.hljs {
 
 }
 
+.input-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .code-input {
     padding: 0;
     border: none;
-    width: 100%;
+    width: 80%;
     background: none;
 
     &:focus {
