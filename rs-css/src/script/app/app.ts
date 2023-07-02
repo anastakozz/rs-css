@@ -1,12 +1,12 @@
-import LevelsView from '../view/levelsView';
-import { getStoredLevel } from '../utils/utils';
+import Controller from '../app/inputController';
 
 export default class App {
 
-    createView(): void {
-        const startLevel = getStoredLevel();
-        const levels = new LevelsView(startLevel);
-        levels.createLevelsView();
+    startGame(): void {
+        const controller = new Controller();
+        controller.initializeInput();
     }
+
+
 
 }

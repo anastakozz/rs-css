@@ -39,6 +39,10 @@ export default class LevelsView {
         progressButton.addEventListener('click', this.clearProgress.bind(this));
     }
 
+    public getActiveLevel ():number {
+        return this.level;
+    }
+
 
     private deselectLevel(): void {
         const previousLevel = document.querySelector('.active-level');

@@ -53,7 +53,7 @@ export const levelsArr: LevelI[] = [
             '<square></square>',
             '<triangle></triangle>',
             '<circle>',
-            '  <square id = romb></square>',
+            '  <square id="romb"></square>',
             '</circle>'
         ]
     },
