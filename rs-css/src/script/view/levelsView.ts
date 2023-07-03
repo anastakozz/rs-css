@@ -25,7 +25,7 @@ export default class LevelsView {
                     const levelNumber = new ElementsGenerator({tag: 'span', class: ['level-number']}).getElement();
                     levelNumber.textContent = `${i}`;
                     levelBlock.append(levelNumber);
-                    levelBlock.addEventListener('click', this.switchLevel.bind(this));
+                    levelBlock.addEventListener('click', this.chooseLevel.bind(this));
                 }
         }
         this.styleActiveLevel();
@@ -54,16 +54,18 @@ export default class LevelsView {
         block?.classList.add('active-level');
     }
 
-    private switchLevel(event: Event): void {
+    private chooseLevel(event: Event): void {
         const target = event.currentTarget as HTMLElement;
         const newLevel: string | null = target.children[1].textContent;
-        if (newLevel){
-            this.level = +newLevel;
-            this.deselectLevel();
-            this.styleActiveLevel();
-            this.updateHtmlWallView(this.level)
-            setStorage(this.level);
-        }
+        if (newLevel) this.switchLevel(+ newLevel);
+    }
+
+    public switchLevel(level: number): void {
+        this.level = +level;
+        this.deselectLevel();
+        this.styleActiveLevel();
+        this.updateHtmlWallView(this.level)
+        setStorage(this.level);
     }
 
     private updateHtmlWallView(level: number): void {

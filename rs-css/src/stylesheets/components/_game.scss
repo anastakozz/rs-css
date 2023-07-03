@@ -61,9 +61,28 @@ square {
     100% {
       opacity: 1;
     }
-  }
+}
 
 .glowing {
     animation: glow 1s infinite;
+}
+
+
+@keyframes success { 
+    10% {
+      filter: none
+    }
+  
+    100% {
+      filter: brightness(0) saturate(100%) invert(71%) sepia(54%) saturate(560%) hue-rotate(34deg) brightness(96%) contrast(88%);
+    }
+}
+
+.blinking {
+    animation: glow 0.3s infinite;
+}
+
+.success {
+    animation: success 0.3s infinite;
 }
 
