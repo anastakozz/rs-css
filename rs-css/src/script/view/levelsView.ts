@@ -8,8 +8,10 @@ export default class LevelsView {
     level: number;
     levelsTotal: number;
     wrapper: HTMLElement | null;
+    done: number[];
 
-    constructor (level:number) {
+    constructor (level:number, arr: number[]) {
+        this.done = arr;
         this.wrapper = document.querySelector('.levels-wrapper');
         this.level = level;
         this.levelsTotal = levelsArr.length;
@@ -26,6 +28,9 @@ export default class LevelsView {
                     levelNumber.textContent = `${i}`;
                     levelBlock.append(levelNumber);
                     levelBlock.addEventListener('click', this.chooseLevel.bind(this));
+                    if (this.done.includes(i)) {
+                        levelBlock.classList.add('done');
+                    }
                 }
         }
         this.styleActiveLevel();
@@ -65,7 +70,7 @@ export default class LevelsView {
         this.deselectLevel();
         this.styleActiveLevel();
         this.updateHtmlWallView(this.level)
-        setStorage(this.level);
+        setStorage(this.level, this.done);
     }
 
     private updateHtmlWallView(level: number): void {
@@ -79,7 +84,14 @@ export default class LevelsView {
         clearStorage();
         this.wrapper?.replaceChildren('');
         this.level = 1;
+        this.done = [];
         this.createLevelsView();
+    }
+
+    public markLevelDone(level: number): void {
+        const block = this.wrapper?.children[level - 1];
+        block?.classList.add('done');
+        this.done.push(level);
     }
 
 }

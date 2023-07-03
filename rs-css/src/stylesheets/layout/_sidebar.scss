@@ -22,7 +22,7 @@
     height: 35px;
 }
 
-.active-level {
+.active-level, .done {
     color: $additional_color;
     & > .checkmark {
         background-image: url(../../assets/SVG/checked.svg)

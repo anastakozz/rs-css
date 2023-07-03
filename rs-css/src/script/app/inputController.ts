@@ -1,5 +1,5 @@
 import { isHtmlElement } from "../utils/utils";
-import { getStoredLevel } from '../utils/utils';
+import { getStoredLevel, getStoredDone } from '../utils/utils';
 import LevelsView from '../view/levelsView';
 import { levelsArr } from "../levels/levels";
 import PopUp from "../utils/popup";
@@ -16,7 +16,8 @@ export default class Controller {
         this.button = document.querySelector('.enter-btn');
         this.input = document.querySelector('.code-input');
         const startLevel = getStoredLevel();
-        this.levels = new LevelsView(startLevel);
+        const doneArr = getStoredDone();
+        this.levels = new LevelsView(startLevel, doneArr);
         this.levels.createLevelsView();
         this.wall = document.querySelector('.wall');
         this.popup = new PopUp();
@@ -66,6 +67,7 @@ export default class Controller {
                 if (nextLevel >= levelsArr.length) {
                     this.popup.togglePopup();
                 } else {
+                    this.levels.markLevelDone(this.levels.getActiveLevel())
                     this.levels.switchLevel(nextLevel) 
                 }
                 //clear input
