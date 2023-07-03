@@ -36,9 +36,14 @@ export default class Controller {
 
         if (isHtmlElement(this.wall)) {
             if (answer && (answer !== '.glowing')) {
-                const answerNodes = Array.from(this.wall.querySelectorAll(`${answer}`));
-                if (trueNodes.every((item) => answerNodes.includes(item)) && answerNodes.length === trueNodes.length){
-                    result = true;
+                try {
+                    const answerNodes = Array.from(this.wall.querySelectorAll(`${answer}`));
+                    if (trueNodes.every((item) => answerNodes.includes(item)) && answerNodes.length === trueNodes.length){
+                        result = true;
+                    }
+                }
+                catch {
+                    result = false;
                 }
             } 
         }
