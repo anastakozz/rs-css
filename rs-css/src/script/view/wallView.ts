@@ -1,6 +1,7 @@
 import {levelsArr} from '../levels/levels'
 import { markupI } from '../utils/types';
-import { ElementsGenerator, isHtmlElement } from '../utils/utils';
+import { isHtmlElement } from '../utils/utils';
+import ElementsGenerator from '../utils/ElementsGenerator';
 
 export default class WallView {
 

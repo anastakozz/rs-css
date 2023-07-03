@@ -1,5 +1,6 @@
 import { levelsArr } from "../levels/levels";
-import { ElementsGenerator } from "../utils/utils";
+import ElementsGenerator from '../utils/ElementsGenerator';
+
 const hljs = require('highlight.js/lib/core');
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 

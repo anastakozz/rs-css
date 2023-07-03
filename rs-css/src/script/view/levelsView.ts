@@ -1,7 +1,8 @@
 import { levelsArr } from "../levels/levels";
-import { ElementsGenerator, isHtmlElement } from "../utils/utils";
+import { isHtmlElement } from "../utils/utils";
 import HtmlView from "./htmlView";
 import WallView from "./wallView";
+import ElementsGenerator from '../utils/ElementsGenerator';
 import { setStorage, clearStorage } from "../utils/utils";
 
 export default class LevelsView {
