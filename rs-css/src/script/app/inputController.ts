@@ -2,6 +2,7 @@ import { isHtmlElement } from "../utils/utils";
 import { getStoredLevel } from '../utils/utils';
 import LevelsView from '../view/levelsView';
 import { levelsArr } from "../levels/levels";
+import PopUp from "../utils/popup";
 
 export default class Controller {
 
@@ -9,6 +10,7 @@ export default class Controller {
     input: HTMLInputElement | null;
     levels: LevelsView
     wall: HTMLElement | null;
+    popup: PopUp;
 
     constructor() {
         this.button = document.querySelector('.enter-btn');
@@ -17,6 +19,7 @@ export default class Controller {
         this.levels = new LevelsView(startLevel);
         this.levels.createLevelsView();
         this.wall = document.querySelector('.wall');
+        this.popup = new PopUp();
     }
 
     public initializeInput() {
@@ -53,7 +56,6 @@ export default class Controller {
 
     private getReaction(result: boolean): void {
 
-        //alert message
         if (result) {
             this.animateSuccess();
 
@@ -62,7 +64,7 @@ export default class Controller {
                 const nextLevel = this.levels.getActiveLevel() + 1;
                 // check if layer is final
                 if (nextLevel >= levelsArr.length) {
-                    alert('You won!');
+                    this.popup.togglePopup();
                 } else {
                     this.levels.switchLevel(nextLevel) 
                 }
