@@ -77,8 +77,8 @@ export const levelsArr: LevelI[] = [
     {
         selectorName: 'select direct child',
         levelNumber: 5,
-        order: 'Select small triangle in a circle:',
-        selector: '>',
+        order: 'Select a triangle in a circle:',
+        selector: 'circle > triangle',
         syntax: 'A>B',
         help: 'TODO',
         svgMarkup: [
@@ -100,7 +100,7 @@ export const levelsArr: LevelI[] = [
         selectorName: 'combine tags',
         levelNumber: 6,
         order: 'Select triangle and circle:',
-        selector: ',',
+        selector: 'triangle, circle',
         syntax: 'A, B',
         help: 'TODO',
         svgMarkup: [
@@ -117,7 +117,7 @@ export const levelsArr: LevelI[] = [
         selectorName: 'select first follower',
         levelNumber: 7,
         order: 'Select circle after triangle',
-        selector: '+',
+        selector: 'circle + triangle',
         syntax: 'A + B',
         help: 'TODO',
         svgMarkup: [
@@ -141,7 +141,7 @@ export const levelsArr: LevelI[] = [
         selectorName: 'select all siblings',
         levelNumber: 8,
         order: 'Select all circles after triangle:',
-        selector: '~',
+        selector: 'triangle ~ circle',
         syntax: 'A~B',
         help: 'TODO',
         svgMarkup: [
@@ -165,8 +165,8 @@ export const levelsArr: LevelI[] = [
         selectorName: 'empty slector',
         levelNumber: 9,
         order: 'Select all empty circles:',
-        selector: ':empty',
-        syntax: 'div:empty',
+        selector: 'circle:empty',
+        syntax: ':empty',
         help: 'TODO',
         svgMarkup: [
             {tag: 'circle', class: ['glowing']},
@@ -185,7 +185,7 @@ export const levelsArr: LevelI[] = [
         selectorName: 'universal slector',
         levelNumber: 10,
         order: 'Select all inside the circles:',
-        selector: '*',
+        selector: 'circle *',
         syntax: 'A *',
         help: 'TODO',
         svgMarkup: [

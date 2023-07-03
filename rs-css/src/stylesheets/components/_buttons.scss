@@ -16,3 +16,14 @@
     box-sizing: border-box;
     margin-right: 10px;
 }
+
+.help-btn {
+    position: absolute;
+    bottom: 0;
+    background: none;
+    border: none;
+    &:hover {
+        background-color: transparent;
+        color: $additional_color;
+    }
+}

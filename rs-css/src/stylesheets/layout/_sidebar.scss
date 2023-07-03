@@ -24,10 +24,17 @@
 
 .active-level, .done {
     color: $additional_color;
-    & > .checkmark {
-        background-image: url(../../assets/SVG/checked.svg)
-    }
 }
+
+.done > .checkmark {
+    background-image: url(../../assets/SVG/checked.svg);
+}
+
+.helped > .checkmark {
+    background-image: url(../../assets/SVG/helped.svg);
+}
+
+
 // .checked {
 //     background-image: url(../../assets/SVG/checked.svg);
 // }

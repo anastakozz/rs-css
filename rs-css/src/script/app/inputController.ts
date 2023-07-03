@@ -1,24 +1,32 @@
 import { isHtmlElement } from "../utils/utils";
-import { getStoredLevel, getStoredDone } from '../utils/utils';
+import { getStoredLevel, getStoredDone, getStoredHelp } from '../utils/utils';
 import LevelsView from '../view/levelsView';
 import { levelsArr } from "../levels/levels";
-import PopUp from "../utils/popup";
+import PopUp from "../components/popup";
+import Help from "../components/help";
 
 export default class Controller {
 
     button: HTMLElement | null;
     input: HTMLInputElement | null;
-    levels: LevelsView
+    levels: LevelsView;
     wall: HTMLElement | null;
     popup: PopUp;
+    help: Help;
+    helpBtn: HTMLElement | null;
+
 
     constructor() {
         this.button = document.querySelector('.enter-btn');
         this.input = document.querySelector('.code-input');
-        const startLevel = getStoredLevel();
-        const doneArr = getStoredDone();
-        this.levels = new LevelsView(startLevel, doneArr);
+
+        this.helpBtn = document.querySelector('.help-btn');
+        this.help = new Help();
+        this.helpBtn?.addEventListener('click', this.getHint.bind(this));
+
+        this.levels = new LevelsView(getStoredLevel(), getStoredDone(), getStoredHelp());
         this.levels.createLevelsView();
+
         this.wall = document.querySelector('.wall');
         this.popup = new PopUp();
     }
@@ -67,8 +75,9 @@ export default class Controller {
                 if (nextLevel >= levelsArr.length) {
                     this.popup.togglePopup();
                 } else {
-                    this.levels.markLevelDone(this.levels.getActiveLevel())
-                    this.levels.switchLevel(nextLevel) 
+                    this.levels.markLevelDone(this.levels.getActiveLevel(), this.help.getHelpFlag());
+                    this.help.clearHelpFlag();
+                    this.levels.switchLevel(nextLevel);
                 }
                 //clear input
                 if (isHtmlElement(this.input)) {
@@ -93,6 +102,12 @@ export default class Controller {
         setTimeout(() => {
             this.wall?.classList.toggle('success')
         }, 800);
+    }
+
+    private getHint(): void {
+        console.log(this.help.getHelpFlag());
+        this.help.showHint(this.levels.getActiveLevel());
+        console.log(this.help.getHelpFlag());
     }
 
 }
