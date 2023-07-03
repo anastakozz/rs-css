@@ -69,19 +69,27 @@ export default class Controller {
             this.animateSuccess();
 
             setTimeout(() => {
-                //update layer
                 const nextLevel = this.levels.getActiveLevel() + 1;
+                //check if the level is last in levelArr
+                this.levels.markLevelDone(this.levels.getActiveLevel(), this.help.getHelpFlag());
+                this.help.clearHelpFlag();
+
+                
+
                 // check if layer is final
-                if (nextLevel >= levelsArr.length) {
+                console.log(getStoredDone().size)
+                if (getStoredDone().size === levelsArr.length) {
                     this.popup.togglePopup();
-                } else {
-                    this.levels.markLevelDone(this.levels.getActiveLevel(), this.help.getHelpFlag());
-                    this.help.clearHelpFlag();
-                    this.levels.switchLevel(nextLevel);
                 }
+
+                if (nextLevel <= levelsArr.length) {
+                    this.levels.switchLevel(nextLevel); 
+                }
+                
                 //clear input
                 if (isHtmlElement(this.input)) {
                     this.input.value = '';
+                    this.input.classList.remove('hinted');
                 }
             }, 1000);
             
@@ -105,9 +113,12 @@ export default class Controller {
     }
 
     private getHint(): void {
-        console.log(this.help.getHelpFlag());
-        this.help.showHint(this.levels.getActiveLevel());
-        console.log(this.help.getHelpFlag());
+        const hint =  this.help.showHint(this.levels.getActiveLevel());
+        if (this.input) {
+            this.input.classList.add('hinted');
+            this.input.value = hint;
+            this.input.focus();
+        }
     }
 
 }

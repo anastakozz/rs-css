@@ -106,4 +106,12 @@ pre code.hljs {
         outline: none;
     }
 }
+@keyframes animated-text {
+    from{width: 0;}
+    to{width: 100%;}
+  }
+
+.hinted {
+    animation: animated-text 4s steps(40,end) 1 normal both;
+}
 

@@ -9,10 +9,10 @@ export default class LevelsView {
     level: number;
     levelsTotal: number;
     wrapper: HTMLElement | null;
-    done: number[];
-    help: number[];
+    done: Set<number>;
+    help: Set<number>;
 
-    constructor (level:number, doneArr: number[], helpArr: number[]) {
+    constructor (level:number, doneArr: Set<number>, helpArr: Set<number>) {
         this.help = helpArr;
         this.done = doneArr;
         this.wrapper = document.querySelector('.levels-wrapper');
@@ -31,10 +31,10 @@ export default class LevelsView {
                     levelNumber.textContent = `${i}`;
                     levelBlock.append(levelNumber);
                     levelBlock.addEventListener('click', this.chooseLevel.bind(this));
-                    if (this.done.includes(i)) {
+                    if (this.done.has(i)) {
                         levelBlock.classList.add('done');
                     }
-                    if (this.help.includes(i)){
+                    if (this.help.has(i)){
                         levelBlock.classList.add('helped');
                     }
                 }
@@ -76,7 +76,6 @@ export default class LevelsView {
         this.deselectLevel();
         this.styleActiveLevel();
         this.updateHtmlWallView(this.level)
-        setStorage(this.level, this.done, this.help);
     }
 
     private updateHtmlWallView(level: number): void {
@@ -90,19 +89,20 @@ export default class LevelsView {
         clearStorage();
         this.wrapper?.replaceChildren('');
         this.level = 1;
-        this.done = [];
-        this.help = [];
+        this.done.clear();
+        this.help.clear();
         this.createLevelsView();
     }
 
     public markLevelDone(level: number, help?: boolean): void {
         const block = this.wrapper?.children[level - 1];
         block?.classList.add('done');
-        this.done.push(level);
+        this.done.add(level);
         if (help) {
-            this.help.push(level)
+            this.help.add(level)
             block?.classList.add('helped');
         }
+        setStorage(this.level, this.done, this.help);
     }
 
 }

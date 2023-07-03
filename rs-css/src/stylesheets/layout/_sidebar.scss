@@ -22,8 +22,14 @@
     height: 35px;
 }
 
-.active-level, .done {
+
+
+.done {
     color: $additional_color;
+}
+
+.active-level {
+    color: $additional_color2;
 }
 
 .done > .checkmark {
