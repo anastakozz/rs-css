@@ -1,16 +1,16 @@
 export default class PopUp {
-    popup: HTMLElement | null;
+  popup: HTMLElement | null;
 
-    constructor() {
-        this.popup = document.querySelector('.popup-wrapper');
-        this.setListeners();
-    }
+  constructor() {
+    this.popup = document.querySelector(".popup-wrapper");
+    this.setListeners();
+  }
 
-    public togglePopup(): void {
-        this.popup?.classList.toggle('hidden');
-    }
+  public togglePopup(): void {
+    this.popup?.classList.toggle("hidden");
+  }
 
-    private setListeners(): void {
-        this.popup?.addEventListener('click', this.togglePopup.bind(this));
-    }
+  private setListeners(): void {
+    this.popup?.addEventListener("click", this.togglePopup.bind(this));
+  }
 }

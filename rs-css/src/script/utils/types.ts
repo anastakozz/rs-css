@@ -10,8 +10,8 @@ export interface LevelI {
 }
 
 export interface markupI {
-    tag: string;
-    class?: string[];
-    id?: string;
-    children?: markupI[];
+  tag: string;
+  class?: string[];
+  id?: string;
+  children?: markupI[];
 }

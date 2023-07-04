@@ -1,45 +1,42 @@
 .sidebar {
-    padding: 65px 15px 25px 20px;
-    position: fixed;
-    right: 0;
-    width: 20%;
-    height: 100vh;
-    background-color: $sidebar_backg;
+  padding: 65px 15px 25px 20px;
+  position: fixed;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: $sidebar_backg;
 }
 
 .level {
-    display: flex;
-    align-items: center;
-    font-size: larger;
+  display: flex;
+  align-items: center;
+  font-size: larger;
 }
 
 .checkmark {
-    background-image: url(../../assets/SVG/unchecked.svg);
-    display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 35px;
+  background-image: url(../../assets/SVG/unchecked.svg);
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 35px;
 }
 
-
-
 .done {
-    color: $additional_color;
+  color: $additional_color;
 }
 
 .active-level {
-    color: $additional_color2;
+  color: $additional_color2;
 }
 
 .done > .checkmark {
-    background-image: url(../../assets/SVG/checked.svg);
+  background-image: url(../../assets/SVG/checked.svg);
 }
 
 .helped > .checkmark {
-    background-image: url(../../assets/SVG/helped.svg);
+  background-image: url(../../assets/SVG/helped.svg);
 }
-
 
 // .checked {
 //     background-image: url(../../assets/SVG/checked.svg);

@@ -1,88 +1,83 @@
-
 .wall {
-    min-width: 40% ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  min-width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 circle,
 triangle,
 square {
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
 }
 
 .small {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .medium {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
-
-
 circle {
-    background-image: url(../../assets/SVG/circle.svg);
+  background-image: url(../../assets/SVG/circle.svg);
 }
 
 triangle {
-    background-image: url(../../assets/SVG/triangle.svg);
-    // &.orange {
-    //     background-image: url(../../assets/SVG/triangle_orange.svg);
-    // }
+  background-image: url(../../assets/SVG/triangle.svg);
+  // &.orange {
+  //     background-image: url(../../assets/SVG/triangle_orange.svg);
+  // }
 }
 
 .orange {
-    background-image: url(../../assets/SVG/triangle_orange.svg);
+  background-image: url(../../assets/SVG/triangle_orange.svg);
 }
 
-
 square {
-    background-image: url(../../assets/SVG/square.svg);
+  background-image: url(../../assets/SVG/square.svg);
 }
 
 #romb {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-@keyframes glow { 
-    40% {
-      opacity: 0.3;
-    }
-  
-    100% {
-      opacity: 1;
-    }
+@keyframes glow {
+  40% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .glowing {
-    animation: glow 1s infinite;
+  animation: glow 1s infinite;
 }
 
+@keyframes success {
+  10% {
+    filter: none;
+  }
 
-@keyframes success { 
-    10% {
-      filter: none
-    }
-  
-    100% {
-      filter: brightness(0) saturate(100%) invert(71%) sepia(54%) saturate(560%) hue-rotate(34deg) brightness(96%) contrast(88%);
-    }
+  100% {
+    filter: brightness(0) saturate(100%) invert(71%) sepia(54%) saturate(560%)
+      hue-rotate(34deg) brightness(96%) contrast(88%);
+  }
 }
 
 .blinking {
-    animation: glow 0.3s infinite;
+  animation: glow 0.3s infinite;
 }
 
 .success {
-    animation: success 0.3s infinite;
+  animation: success 0.3s infinite;
 }
-

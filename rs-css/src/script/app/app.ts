@@ -1,12 +1,8 @@
-import Controller from '../app/inputController';
+import Controller from "../app/inputController";
 
 export default class App {
-
-    startGame(): void {
-        const controller = new Controller();
-        controller.initializeInput();
-    }
-
-
-
+  startGame(): void {
+    const controller = new Controller();
+    controller.initializeInput();
+  }
 }

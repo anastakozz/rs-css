@@ -1,0 +1,80 @@
+.css-title,
+.html-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: smaller;
+  background-color: $title_area;
+}
+
+.code-space {
+  display: flex;
+}
+
+.line-numbers {
+  box-sizing: border-box;
+  padding-top: 5px;
+  text-align: center;
+  width: 10%;
+  height: 350px;
+  background-color: $line-num_area;
+}
+
+.html-code-area,
+.css-code-area {
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-left: 10px;
+  background-color: $code-area_field;
+  height: 350px;
+  width: 90%;
+}
+
+.html-code-area {
+  background-color: $html-area_field;
+}
+
+pre {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hljs {
+  padding: 0;
+  background: none;
+}
+
+pre code.hljs {
+  padding: 0 !important;
+  background: none !important;
+}
+
+.input-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.code-input {
+  padding: 0;
+  border: none;
+  width: 80%;
+  background: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hinted {
+  animation: animated-text 4s steps(40, end) 1 normal both;
+}
