@@ -58,11 +58,15 @@
     .css-editor,
     .html-editor {
       width: 100%;
+      overflow: scroll;
     }
 
     .css-editor {
       height: 140px;
-      overflow: hidden;
+    }
+
+    .html-editor {
+      height: 282px;
     }
   }
 }
