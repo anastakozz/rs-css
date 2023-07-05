@@ -2,8 +2,11 @@ body {
   background-image: url(../../assets/3d-grunge-brick-wall-texture.jpg);
   background-size: cover;
   background-repeat: initial;
-  height: 100vh;
+  min-height: 100vh;
   color: $main_color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .main {

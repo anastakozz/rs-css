@@ -16,7 +16,7 @@
   padding-top: 5px;
   text-align: center;
   width: 10%;
-  height: 350px;
+  min-height: 320px;
   background-color: $line-num_area;
 }
 
@@ -26,7 +26,7 @@
   padding-top: 5px;
   padding-left: 10px;
   background-color: $code-area_field;
-  height: 350px;
+  min-height: 320px;
   width: 90%;
 }
 

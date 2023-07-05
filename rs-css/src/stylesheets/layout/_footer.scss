@@ -1,9 +1,7 @@
 .footer {
   margin: 30px 0 5px 0;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  // background-color: $footer_backg;
+  z-index: 1;
 }
 
 .footer-wrapper {
@@ -18,8 +16,4 @@
 
 .rss-logo {
   width: 70px;
-  // position: fixed;
-  // left: 50%;
-  // margin-left: -25px;
-  // margin-top: -12px;
 }

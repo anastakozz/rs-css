@@ -12,15 +12,32 @@
   justify-content: center;
   align-items: center;
   padding: 40px 20px 20px 20px;
+
+  @include media-tablet {
+    padding: 30px 15px 15px 15px;
+  }
+
+  @include media-mobile {
+    padding: 20px 10px 10px 10px;
+  }
 }
 
 .game {
+  box-sizing: border-box;
   position: relative;
   max-width: 90%;
-  height: 200px;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include media-tablet {
+    min-height: 180px;
+  }
+
+  @include media-mobile {
+    min-height: 120px;
+  }
 }
 
 .editor {
@@ -33,5 +50,19 @@
   .html-editor {
     width: 50%;
     box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  @include media-mobile {
+    flex-direction: column;
+
+    .css-editor,
+    .html-editor {
+      width: 100%;
+    }
+
+    .css-editor {
+      height: 140px;
+      overflow: hidden;
+    }
   }
 }

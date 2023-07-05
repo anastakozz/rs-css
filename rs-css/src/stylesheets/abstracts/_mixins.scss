@@ -1,18 +1,11 @@
-@mixin font-face {
-  @font-face {
-    font-family: "Comfortaa", cursive;
-    src: url("../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf")
-      format("ttf");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+@mixin media-tablet {
+  @media (max-width: $medium) {
+    @content;
   }
 }
 
-@font-face {
-  font-family: "Comfortaa", cursive;
-  src: url("../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf")
-    format("ttf");
-  font-weight: 600;
-  font-style: normal;
+@mixin media-mobile {
+  @media (max-width: $small) {
+    @content;
+  }
 }

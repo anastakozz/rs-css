@@ -3,8 +3,16 @@
   position: fixed;
   right: 0;
   width: 20%;
-  height: 100vh;
+  height: 100%;
   background-color: $sidebar_backg;
+
+  @include media-tablet {
+    padding: 35px 10px;
+  }
+
+  @include media-mobile {
+    padding: 25px 5px;
+  }
 }
 
 .level {
@@ -37,7 +45,3 @@
 .helped > .checkmark {
   background-image: url(../../assets/SVG/helped.svg);
 }
-
-// .checked {
-//     background-image: url(../../assets/SVG/checked.svg);
-// }
