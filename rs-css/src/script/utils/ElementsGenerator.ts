@@ -6,7 +6,7 @@ export default class ElementsGenerator {
     this.element = this.createElement(params);
   }
 
-  createElement(params: markupI): HTMLElement {
+  private createElement(params: markupI): HTMLElement {
     const elem: HTMLElement = document.createElement(params.tag);
     if (params.class) {
       params.class.forEach((item) => elem.classList.add(item));
@@ -17,7 +17,7 @@ export default class ElementsGenerator {
     return elem;
   }
 
-  getElement(): HTMLElement {
+  public getElement(): HTMLElement {
     return this.element;
   }
 }
