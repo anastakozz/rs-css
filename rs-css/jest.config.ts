@@ -7,6 +7,9 @@ const config: Config = {
     "^.+\\.ts?$": "ts-jest",
   },
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
+  collectCoverage: true,
+  coverageDirectory: "coverage",
+  coverageProvider: "v8",
 };
 
 export default config;
