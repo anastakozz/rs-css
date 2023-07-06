@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "highlight.js": "^11.8.0",
+    "jest-environment-jsdom": "^29.6.0",
     "ts-node": "^10.9.1"
   }
 }
