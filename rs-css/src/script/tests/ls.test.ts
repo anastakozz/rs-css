@@ -1,12 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 import "jest-localstorage-mock";
-import {
-  getStoredLevel,
-  getStoredDone,
-  getStoredHelp,
-  setStorage,
-  clearStorage,
-} from "../utils/utils";
+import { setStorage } from "../utils/utils";
 
 describe("setLocalStorage", () => {
   const level = 1;
@@ -27,4 +21,3 @@ describe("setLocalStorage", () => {
     expect(localStorage.getItem("doneWithHelp")).toEqual("3,4");
   });
 });
-
