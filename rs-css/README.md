@@ -1,6 +1,6 @@
 ## RSS-CSS Training game
 
-#### Educationl task made for Rolling Scope School in Frontend course 2023.
+#### Educationl task made for Rolling Scope School on Frontend course 2023.
 
 Author: Anastasiya Kozlova (shvedagon@gmail.com / Telegram:  @N_Kozz)
 
