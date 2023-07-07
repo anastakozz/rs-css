@@ -82,7 +82,6 @@ export default class Controller {
         this.help.clearHelpFlag();
 
         // check if layer is final
-        console.log(getStoredDone().size);
         if (getStoredDone().size === levelsArr.length) {
           this.popup.togglePopup();
         }
