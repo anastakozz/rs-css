@@ -15,7 +15,7 @@ export default class Help {
     this.helpFlag = false;
   }
 
-  public showHint(level: number): string {
+  public getHint(level: number): string {
     this.helpFlag = true;
     const hint = levelsArr[level - 1].selector;
     return hint;

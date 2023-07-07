@@ -20,7 +20,7 @@ export default class Controller {
 
     this.helpBtn = document.querySelector(".help-btn");
     this.help = new Help();
-    this.helpBtn?.addEventListener("click", this.getHint.bind(this));
+    this.helpBtn?.addEventListener("click", this.showHint.bind(this));
 
     this.levels = new LevelsView(
       getStoredLevel(),
@@ -116,12 +116,17 @@ export default class Controller {
     }, 800);
   }
 
-  private getHint(): void {
-    const hint = this.help.showHint(this.levels.getActiveLevel());
-    if (this.input) {
-      this.input.classList.add("hinted");
-      this.input.value = hint;
-      this.input.focus();
-    }
+  private showHint(): void {
+    const hint = this.help.getHint(this.levels.getActiveLevel());
+
+    let charIndex = 0;
+    setInterval(() => {
+      if (charIndex <= hint.length - 1) {
+        if (this.input) this.input.value += hint[charIndex];
+        charIndex += 1;
+      }
+    }, 120);
+
+    this.input?.focus();
   }
 }
