@@ -1,12 +1,12 @@
 import { describe, expect, test } from "@jest/globals";
 import "jest-localstorage-mock";
-import { setStorage } from "../utils/utils";
+import { getStoredDone, setStorage, getStoredHelp } from "../utils/utils";
+
+const level = 1;
+const doneArr = new Set([2, 3, 4]);
+const helpArr = new Set([3, 4]);
 
 describe("setLocalStorage", () => {
-  const level = 1;
-  const doneArr = new Set([2, 3, 4]);
-  const helpArr = new Set([3, 4]);
-
   setStorage(level, doneArr, helpArr);
 
   test("sets active level", () => {
@@ -19,5 +19,25 @@ describe("setLocalStorage", () => {
 
   test("sets helped levels", () => {
     expect(localStorage.getItem("doneWithHelp")).toEqual("3,4");
+  });
+});
+
+describe("getStoredDone", () => {
+  test("returns Set", () => {
+    expect(getStoredDone()).toBeInstanceOf(Set);
+  });
+
+  test("returns Set with proper content", () => {
+    expect(Array.from(getStoredDone()).join(",")).toEqual("2,3,4");
+  });
+});
+
+describe("getStoredHelp", () => {
+  test("returns Set", () => {
+    expect(getStoredHelp()).toBeInstanceOf(Set);
+  });
+
+  test("returns Set with proper content", () => {
+    expect(Array.from(getStoredHelp()).join(",")).toEqual("3,4");
   });
 });
