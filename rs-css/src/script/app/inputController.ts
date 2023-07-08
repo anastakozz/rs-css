@@ -119,10 +119,12 @@ export default class Controller {
     const hint = this.help.getHint(this.levels.getActiveLevel());
 
     let charIndex = 0;
-    setInterval(() => {
+    const timing = setInterval(() => {
       if (charIndex <= hint.length - 1) {
         if (this.input) this.input.value += hint[charIndex];
         charIndex += 1;
+      } else {
+        clearInterval(timing);
       }
     }, 120);
 
