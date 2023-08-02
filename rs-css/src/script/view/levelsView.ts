@@ -28,6 +28,7 @@ export default class LevelsView {
           tag: "div",
           class: ["level", "link"],
         }).getElement();
+
         this.wrapper.append(levelBlock);
         levelBlock.append(
           new ElementsGenerator({
@@ -35,21 +36,26 @@ export default class LevelsView {
             class: ["checkmark"],
           }).getElement()
         );
+
         const levelNumber = new ElementsGenerator({
           tag: "span",
           class: ["level-number"],
         }).getElement();
+
         levelNumber.textContent = `${i}`;
         levelBlock.append(levelNumber);
         levelBlock.addEventListener("click", this.chooseLevel.bind(this));
+
         if (this.done.has(i)) {
           levelBlock.classList.add("done");
         }
+
         if (this.help.has(i)) {
           levelBlock.classList.add("helped");
         }
       }
     }
+
     this.styleActiveLevel();
     this.updateHtmlWallView(this.level);
   }
@@ -112,10 +118,12 @@ export default class LevelsView {
     const block = this.wrapper?.children[level - 1];
     block?.classList.add("done");
     this.done.add(level);
+
     if (help) {
       this.help.add(level);
       block?.classList.add("helped");
     }
+
     setStorage(this.level, this.done, this.help);
   }
 }
