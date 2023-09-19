@@ -22,7 +22,7 @@
 }
 
 .checkmark {
-  background-image: url(../../assets/SVG/unchecked.svg);
+  background-image: url("../../assets/SVG/unchecked.svg");
   display: block;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,9 +39,9 @@
 }
 
 .done > .checkmark {
-  background-image: url(../../assets/SVG/checked.svg);
+  background-image: url("../../assets/SVG/checked.svg");
 }
 
 .helped > .checkmark {
-  background-image: url(../../assets/SVG/helped.svg);
+  background-image: url("../../assets/SVG/helped.svg");
 }

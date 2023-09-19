@@ -1,12 +1,13 @@
 html {
   background-color: black;
 }
+
 body {
   color: $main_color;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url(../../assets/3d-grunge-brick-wall-texture.jpg);
+  background-image: url("../../assets/3d-grunge-brick-wall-texture.jpg");
   background-size: cover;
   background-repeat: initial;
   min-height: 100vh;

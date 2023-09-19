@@ -1,13 +1,10 @@
 @import 
     "abstracts/variables",
     "abstracts/mixins";
-
 @import 
     "base/normalize";
-
 @import
     "themes/theme";
-
 @import
     "components/links",
     "components/texts",
@@ -15,8 +12,6 @@
     "components/editors",
     "components/buttons",
     "components/popup";
-
-
 @import 
     "layout/header",
     "layout/body",

@@ -66,10 +66,12 @@ pre code.hljs {
     outline: none;
   }
 }
+
 @keyframes animated-text {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }

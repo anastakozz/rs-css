@@ -17,7 +17,7 @@ module.exports = {
     "plugins": [
         "@typescript-eslint"
     ],
-    "ignorePatterns": [".eslintrc.js", "main.js", "webpack.config.js"],
+    "ignorePatterns": [".eslintrc.js", "main.js", "webpack.config.js", "tsconfig.json"],
     "rules": {
         "@typescript-eslint/no-explicit-any": 2,
         "@typescript-eslint/no-var-requires": 0,
