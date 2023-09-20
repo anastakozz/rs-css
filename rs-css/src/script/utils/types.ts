@@ -14,4 +14,5 @@ export interface markupI {
   class?: string[];
   id?: string;
   children?: markupI[];
+  textContent?: string;
 }

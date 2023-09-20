@@ -16,6 +16,10 @@ export default class ElementsGenerator {
       elem.id = params.id;
     }
 
+    if (params.textContent) {
+      elem.textContent = params.textContent;
+    }
+
     return elem;
   }
 
