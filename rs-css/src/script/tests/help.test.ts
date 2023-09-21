@@ -12,8 +12,8 @@ describe("Help", () => {
     expect(typeof popup.clearHelpFlag).toBe("function");
   });
 
-  test("defines showHint()", () => {
-    expect(typeof popup.showHint).toBe("function");
+  test("defines getHint()", () => {
+    expect(typeof popup.getHint).toBe("function");
   });
 
   test("defines helpFlag", () => {
