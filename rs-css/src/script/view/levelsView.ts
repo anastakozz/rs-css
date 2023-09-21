@@ -4,18 +4,19 @@ import HtmlView from "./htmlView";
 import WallView from "./wallView";
 import ElementsGenerator from "../utils/ElementsGenerator";
 import { setStorage, clearStorage } from "../utils/utils";
+import { filterActiveLevel, getWrapper } from "../utils/getters";
 
 export default class LevelsView {
   level: number;
   levelsTotal: number;
-  wrapper: HTMLElement | null;
+  wrapper: HTMLElement | undefined;
   done: Set<number>;
   help: Set<number>;
 
   constructor(level: number, doneArr: Set<number>, helpArr: Set<number>) {
     this.help = helpArr;
     this.done = doneArr;
-    this.wrapper = document.querySelector(".levels-wrapper");
+    this.wrapper = getWrapper();
     this.level = level;
     this.levelsTotal = levelsArr.length;
     this.createClearButton();
@@ -75,7 +76,7 @@ export default class LevelsView {
   }
 
   private deselectLevel(): void {
-    const previousLevel = document.querySelector(".active-level");
+    const previousLevel = filterActiveLevel();
     previousLevel?.classList.remove("active-level");
   }
 

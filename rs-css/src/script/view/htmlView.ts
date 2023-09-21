@@ -1,5 +1,6 @@
 import { levelsArr } from "../levels/levels";
 import ElementsGenerator from "../utils/ElementsGenerator";
+import { getHtmlArea } from "../utils/getters";
 
 const hljs = require("highlight.js/lib/core");
 hljs.registerLanguage("xml", require("highlight.js/lib/languages/xml"));
@@ -7,13 +8,13 @@ hljs.registerLanguage("xml", require("highlight.js/lib/languages/xml"));
 export default class HtmlView {
   fragment: DocumentFragment;
   level: number;
-  area: HTMLElement | null;
+  area: HTMLElement | undefined;
 
   constructor(level: number) {
     this.level = level;
     this.fragment = document.createDocumentFragment();
     this.createHtmlView(level);
-    this.area = document.querySelector(".html-pre");
+    this.area = getHtmlArea();
   }
 
   private appendCodeElement(str: string): void {

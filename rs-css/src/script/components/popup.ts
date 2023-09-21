@@ -38,7 +38,7 @@ export default class PopUp {
     }).getElement();
     generateMarkup([popUPMarkup], popup);
 
-    document.body.prepend(popup);
+    document.body.children[0].append(popup);
 
     return popup;
   }

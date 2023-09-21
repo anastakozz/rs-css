@@ -4,21 +4,32 @@ import LevelsView from "../view/levelsView";
 import { levelsArr } from "../levels/levels";
 import PopUp from "../components/popup";
 import Help from "../components/help";
+import { ClassItems } from "../lib/enum";
+import {
+  getWall,
+  getHelpButton,
+  getEnterButton,
+  getCodeInput,
+} from "../utils/getters";
+import getTrueNodes from "../utils/getTrueNodes";
 
 export default class Controller {
-  button: HTMLElement | null;
-  input: HTMLInputElement | null;
+  button: HTMLElement | undefined;
+  input: HTMLInputElement | undefined;
   levels: LevelsView;
-  wall: HTMLElement | null;
+  wall: HTMLElement | undefined;
   popup: PopUp;
   help: Help;
-  helpBtn: HTMLElement | null;
+  helpBtn: HTMLElement | undefined;
 
   constructor() {
-    this.button = document.querySelector(".enter-btn");
-    this.input = document.querySelector(".code-input");
+    this.wall = getWall();
+    this.popup = new PopUp();
 
-    this.helpBtn = document.querySelector(".help-btn");
+    this.button = getEnterButton();
+    this.input = getCodeInput();
+
+    this.helpBtn = getHelpButton();
     this.help = new Help();
     this.helpBtn?.addEventListener("click", this.showHint.bind(this));
 
@@ -29,7 +40,7 @@ export default class Controller {
     );
     this.levels.createLevelsView();
 
-    this.wall = document.querySelector(".wall");
+    this.wall = getWall();
     this.popup = new PopUp();
   }
 
@@ -43,12 +54,12 @@ export default class Controller {
   }
 
   private testInput(): void {
-    const trueNodes = Array.from(document.querySelectorAll(".glowing"));
+    const trueNodes = getTrueNodes(`${ClassItems.glowing}`, this.wall);
     const answer = this.input?.value;
     let result = false;
 
     if (isHtmlElement(this.wall)) {
-      if (answer && answer !== ".glowing") {
+      if (answer && answer !== `.${ClassItems.glowing}`) {
         try {
           const answerNodes = Array.from(
             this.wall.querySelectorAll(`${answer}`)
@@ -93,7 +104,7 @@ export default class Controller {
         //clear input
         if (isHtmlElement(this.input)) {
           this.input.value = "";
-          this.input.classList.remove("hinted");
+          this.input.classList.remove(`${ClassItems.hinted}`);
         }
       }, 1000);
     } else {
@@ -102,16 +113,16 @@ export default class Controller {
   }
 
   private animateError(): void {
-    this.wall?.classList.toggle("blinking");
+    this.wall?.classList.toggle(`${ClassItems.blinking}`);
     setTimeout(() => {
-      this.wall?.classList.toggle("blinking");
+      this.wall?.classList.toggle(`${ClassItems.blinking}`);
     }, 800);
   }
 
   private animateSuccess(): void {
-    this.wall?.classList.toggle("success");
+    this.wall?.classList.toggle(`${ClassItems.success}`);
     setTimeout(() => {
-      this.wall?.classList.toggle("success");
+      this.wall?.classList.toggle(`${ClassItems.success}`);
     }, 800);
   }
 
