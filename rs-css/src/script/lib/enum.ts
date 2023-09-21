@@ -3,5 +3,8 @@ export enum ClassItems {
   blinking = "blinking",
   success = "success",
   glowing = "glowing",
-  hidden = "hidden"
+  hidden = "hidden",
+  done = "done",
+  helped = "helped",
+  active = "active-level"
 }

@@ -5,6 +5,7 @@ import WallView from "./wallView";
 import ElementsGenerator from "../utils/ElementsGenerator";
 import { setStorage, clearStorage } from "../utils/utils";
 import { filterActiveLevel, getWrapper } from "../utils/getters";
+import { ClassItems } from "../lib/enum";
 
 export default class LevelsView {
   level: number;
@@ -48,11 +49,11 @@ export default class LevelsView {
         levelBlock.addEventListener("click", this.chooseLevel.bind(this));
 
         if (this.done.has(i)) {
-          levelBlock.classList.add("done");
+          levelBlock.classList.add(`${ClassItems.done}`);
         }
 
         if (this.help.has(i)) {
-          levelBlock.classList.add("helped");
+          levelBlock.classList.add(`${ClassItems.helped}`);
         }
       }
     }
@@ -65,8 +66,8 @@ export default class LevelsView {
     const progressButton = new ElementsGenerator({
       tag: "button",
       class: ["button", "hist-btn"],
+      textContent: "clear"
     }).getElement();
-    progressButton.textContent = "clear";
     this.wrapper?.after(progressButton);
     progressButton.addEventListener("click", this.clearProgress.bind(this));
   }
@@ -77,12 +78,12 @@ export default class LevelsView {
 
   private deselectLevel(): void {
     const previousLevel = filterActiveLevel();
-    previousLevel?.classList.remove("active-level");
+    previousLevel?.classList.remove(`${ClassItems.active}`);
   }
 
   private styleActiveLevel(): void {
     const block = this.wrapper?.children[this.level - 1];
-    block?.classList.add("active-level");
+    block?.classList.add(`${ClassItems.active}`);
   }
 
   private chooseLevel(event: Event): void {
@@ -117,12 +118,12 @@ export default class LevelsView {
 
   public markLevelDone(level: number, help?: boolean): void {
     const block = this.wrapper?.children[level - 1];
-    block?.classList.add("done");
+    block?.classList.add(`${ClassItems.done}`);
     this.done.add(level);
 
     if (help) {
       this.help.add(level);
-      block?.classList.add("helped");
+      block?.classList.add(`${ClassItems.helped}`);
     }
 
     setStorage(this.level, this.done, this.help);
