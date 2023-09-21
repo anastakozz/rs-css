@@ -6,10 +6,10 @@ export function getStoredLevel(): number {
   return check ? +check : 1;
 }
 
-export function setStorage(
-  level: number,
-  doneArr: Set<number>,
-  helpArr: Set<number>
+export function setStorage<Type>(
+  level: Type,
+  doneArr: Set<Type>,
+  helpArr: Set<Type>
 ): void {
   localStorage.setItem("activeLevel", `${level}`);
   localStorage.setItem("doneLevels", Array.from(doneArr).join(","));

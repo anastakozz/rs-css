@@ -16,3 +16,8 @@ export interface markupI {
   children?: markupI[];
   textContent?: string;
 }
+
+export type trueNodesParams = {
+  classname: string;
+  parent: HTMLElement | undefined | Element;
+};

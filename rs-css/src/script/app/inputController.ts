@@ -54,7 +54,7 @@ export default class Controller {
   }
 
   private testInput(): void {
-    const trueNodes = getTrueNodes(`${ClassItems.glowing}`, this.wall);
+    const trueNodes = getTrueNodes({classname: `${ClassItems.glowing}`, parent: this.wall});
     const answer = this.input?.value;
     let result = false;
 

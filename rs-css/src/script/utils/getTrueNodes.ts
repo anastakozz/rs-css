@@ -1,6 +1,7 @@
+import { trueNodesParams } from "./types";
+
 export default function getTrueNodes(
-  classname: string,
-  parent: HTMLElement | undefined | Element
+  {classname, parent}:trueNodesParams
 ): Element[] {
   const result: Element[] = [];
 
