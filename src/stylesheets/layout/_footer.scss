@@ -5,12 +5,12 @@
 }
 
 .footer-wrapper {
-  margin: auto;
-  box-sizing: border-box;
+  justify-content: start;
+  height: 50px;
   width: 90%;
-  height: 40px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 

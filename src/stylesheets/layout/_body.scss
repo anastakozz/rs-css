@@ -3,6 +3,8 @@ html {
 }
 
 body {
+  position: absolute;
+  width: 100%;
   color: $main_color;
   display: flex;
   flex-direction: column;
@@ -10,9 +12,10 @@ body {
   background-image: url("../../assets/3d-grunge-brick-wall-texture.jpg");
   background-size: cover;
   background-repeat: initial;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .main {
   display: flex;
+  flex-grow: 1;
 }
