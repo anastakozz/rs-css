@@ -45,6 +45,7 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   .css-editor,
   .html-editor {
@@ -58,7 +59,7 @@
     .css-editor,
     .html-editor {
       width: 100%;
-      overflow: scroll;
+      overflow: hidden;
     }
 
     .css-editor {
