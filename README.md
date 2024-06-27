@@ -1,6 +1,6 @@
 ## RSS-CSS Training game
 
-#### Educationl task made for Rolling Scope School on Frontend course 2023.
+#### Educational task made for Rolling Scope School on Frontend course 2023.
 
 Author: Anastasiya Kozlova (shvedagon@gmail.com / Telegram:  @N_Kozz)
 
@@ -8,7 +8,7 @@ Prototype: https://flukeout.github.io/
 
 Main goals: 
 - implement working game with nice tasks and design :)
-- use Typescipt, Eslint, Webpack, Sass and Jest
+- use Typescript, Eslint, Webpack, Sass and Jest
 - implement main principles of OOP
 
 #### Score: 125/150
