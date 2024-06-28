@@ -6,12 +6,20 @@
   margin-top: 15px;
   border-color: $additional_color;
   transition: all 0.3s;
+  height: 25px;
 
   &:hover {
     background-color: $additional_color;
   }
 }
 
+.hist-btn {
+  @include media-mobile {
+    width: 55px;
+    font-size: small;
+    margin:  15px auto 0 auto;
+  }
+}
 .enter-btn {
   position: absolute;
   right: 0;

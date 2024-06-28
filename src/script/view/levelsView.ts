@@ -66,7 +66,7 @@ export default class LevelsView {
     const progressButton = new ElementsGenerator({
       tag: "button",
       class: ["button", "hist-btn"],
-      textContent: "clear"
+      textContent: "Clear"
     }).getElement();
     this.wrapper?.after(progressButton);
     progressButton.addEventListener("click", this.clearProgress.bind(this));
