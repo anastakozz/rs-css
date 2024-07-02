@@ -4,6 +4,11 @@
 
 Author: Anastasiya Kozlova (shvedagon@gmail.com / Telegram:  @N_Kozz)
 
+[Deploy](https://rs-css.vercel.app/)
+
+<img width="1400" alt="Screenshot 2024-07-02 at 19 03 45" src="https://github.com/anastakozz/rs-css/assets/117598324/6085028b-0a69-4baa-80d5-8ba303fd79b3">
+
+
 Prototype: https://flukeout.github.io/
 
 Main goals: 
